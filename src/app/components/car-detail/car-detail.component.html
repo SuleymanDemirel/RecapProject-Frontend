@@ -1,0 +1,25 @@
+
+<div class="card text-center "></div>
+<div class="card-header">
+     
+</div>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col" *ngFor="let car of cars">
+        <div class="card border-dark ">
+        <img src="https://bilisimbilgi.com/wp-content/uploads/bmw-i8-goruntuler.jpg" alt="...">
+        <div class="card-body tex">
+          <h5 class="card-title"> <strong>{{car.carName}}</strong> </h5>
+          <p class="card-text"> <strong>Açıklama : {{car.description}}</strong> </p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> <strong>CarId :  {{car.id}}</strong></li>
+              <li class="list-group-item"> <strong>Marka :  {{car.brandName}}</strong></li>
+              <li class="list-group-item"> <strong>Renk :  {{car.colorName}}</strong></li>
+              <li class="list-group-item"> <strong>Model :  {{car.modelYear}}</strong></li>
+              <li class="list-group-item"> <strong>Fiyat :  {{car.dailyPrice | currency}}</strong></li>
+           
+              
+            </ul>
+        </div>
+      </div>
+    </div>
+</div>

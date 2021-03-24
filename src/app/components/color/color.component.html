@@ -1,0 +1,8 @@
+<ul class="list-group-item">
+    <li class="list-group-item  list-group-item-primary d-flex justify-content-between align-items-center" routerLink = "/cars" aria-current="true"> <strong>Renkler</strong> </li>
+
+    <li (click)="setCurrentColor(color)" 
+    routerLink="/cars/color/{{color.colorId}}" 
+    *ngFor="let color of colors" 
+    [class]="getCurrentColorClass(color)">{{color.colorName}}</li>
+  </ul>

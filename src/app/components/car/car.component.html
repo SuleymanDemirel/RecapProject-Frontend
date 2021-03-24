@@ -1,0 +1,57 @@
+<!-- 
+<table class="table text-center">
+    <thead>
+        <tr>
+            
+            <th>Marka</th>
+            <th>Renk</th>
+            <th>Model</th>
+            <th>Fiyat</th>
+            <th>Araç ismi</th>
+            <th>Açıklama</th>
+
+
+        </tr>
+    </thead>
+    <tr *ngFor="let car of cars" class="text-center">
+     
+        <td>{{car.brandName}}</td>
+        <td>{{car.colorName}}</td>
+        <td>{{car.modelYear}}</td>
+        <td>{{car.dailyPrice}}</td>
+        <td>{{car.carName}}</td>
+        <td>{{car.description}}</td>
+
+    </tr>
+</table> -->
+
+
+<div class="card text-center ">
+    
+    <div class="card-header">
+      <!-- routerLink="cars/cardetail/{{car.id}}" -->
+    </div>
+
+    <div class="row" >
+        <div class="col-sm-6" *ngFor="let car of cars" >
+          <div class="card border-success ">
+            <div class="card-body">
+              <h5 class="card-title"><strong> {{car.carName}}</strong></h5>
+              <img src="https://bilisimbilgi.com/wp-content/uploads/bmw-i8-goruntuler.jpg" class="card-img-top" alt="...">
+              <p class="card-text"></p>
+              <a  class="btn btn-primary " style="position: relative; right: 2px;" >Kirala</a>
+              <button routerLink="cars/cardetail/{{car.id}}" type="button" class="btn btn-secondary">Details</button>
+            </div>
+            <ul class="list-group list-group-flush">
+             
+                <li class="list-group-item"> <strong>Marka :  {{car.brandName}}</strong></li>
+                <li class="list-group-item"> <strong>Renk :  {{car.colorName}}</strong></li>
+                <li class="list-group-item"> <strong>Model :  {{car.modelYear}}</strong></li>
+                <li class="list-group-item"> <strong>Fiyat :  {{car.dailyPrice | currency}}</strong></li>
+             
+                
+              </ul>
+          </div>
+        </div>    
+  </div>
+  

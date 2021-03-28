@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
-  selector: 'app-car-detail',
-  templateUrl: './car-detail.component.html',
-  styleUrls: ['./car-detail.component.css']
+  selector: 'app-payment',
+  templateUrl: './payment.component.html',
+  styleUrls: ['./payment.component.css']
 })
-export class CarDetailComponent implements OnInit {
-
+export class PaymentComponent implements OnInit {
   cars:Car[]=[];
-  deneme="dx";
-  apiUrl : string = "https://localhost:44374/api";
-  constructor(private carService:CarService,private activatedRoute:ActivatedRoute) { }
+  constructor(private carService:CarService,private activatedRoute:ActivatedRoute,private toastrService:ToastrService ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -29,7 +27,10 @@ export class CarDetailComponent implements OnInit {
     })
   }
 
+  paymentWork(car:Car){
+   
+    this.toastrService.success("Başarıyla Kiralandı.",""+"Araç ismi: "+car.carName +" Marka: "+" "+car.brandName+" "+"Fiyat:  "+car.dailyPrice);
 
-
-
+   
+}
 }

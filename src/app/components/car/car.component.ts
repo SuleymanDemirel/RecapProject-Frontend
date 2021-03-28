@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -12,8 +13,9 @@ import { ActivatedRoute } from '@angular/router';
 export class CarComponent implements OnInit {
   cars:Car[]=[];
   currentCar:Car;
+  filterText="";
   
-  constructor(private carService:CarService, private activatedRoute:ActivatedRoute) { }
+  constructor(private carService:CarService, private activatedRoute:ActivatedRoute, private toastrService:ToastrService) { }
 
   ngOnInit(): void {
    this.activatedRoute.params.subscribe(params=>{

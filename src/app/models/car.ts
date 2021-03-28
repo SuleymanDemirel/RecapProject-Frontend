@@ -10,6 +10,9 @@ export interface Car{
     brandName:string;
     colorName:string;
     carId:number;
+    rentDate:Date;
+    returnDate:Date;
+    firstName:string;
 
 
 }

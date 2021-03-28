@@ -24,34 +24,45 @@
 
     </tr>
 </table> -->
-
-
-<div class="card text-center ">
+<ul class="list-group ">
+            
+  <div class="mb-2 col-sm-5">
+    <label for="filterText" class="form-label"> <strong>Ara</strong> </label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Araç ismi giriniz..">
+  </div>
+  <div *ngIf="filterText" class="alert alert-primary">
+    {{filterText}} aradınız..
+  </div>
     
-    <div class="card-header">
-      <!-- routerLink="cars/cardetail/{{car.id}}" -->
-    </div>
+  </ul>
+
+
+<div class="card text-center"> 
+  
 
     <div class="row" >
-        <div class="col-sm-6" *ngFor="let car of cars" >
+        <div class="col-sm-6" *ngFor="let car of cars | filterPipe:filterText" >
           <div class="card border-success ">
             <div class="card-body">
               <h5 class="card-title"><strong> {{car.carName}}</strong></h5>
               <img src="https://bilisimbilgi.com/wp-content/uploads/bmw-i8-goruntuler.jpg" class="card-img-top" alt="...">
               <p class="card-text"></p>
-              <a  class="btn btn-primary " style="position: relative; right: 2px;" >Kirala</a>
-              <button routerLink="cars/cardetail/{{car.id}}" type="button" class="btn btn-secondary">Details</button>
+            
+              <button routerLink="cars/cardetail/{{car.id}}" type="button" class="btn btn-outline-danger" style="border-radius: 50px; width: 100%;; ">Details</button>
             </div>
+           
             <ul class="list-group list-group-flush">
              
                 <li class="list-group-item"> <strong>Marka :  {{car.brandName}}</strong></li>
                 <li class="list-group-item"> <strong>Renk :  {{car.colorName}}</strong></li>
                 <li class="list-group-item"> <strong>Model :  {{car.modelYear}}</strong></li>
                 <li class="list-group-item"> <strong>Fiyat :  {{car.dailyPrice | currency}}</strong></li>
-             
+                
                 
               </ul>
           </div>
         </div>    
+        
   </div>
-  
+</div>
+

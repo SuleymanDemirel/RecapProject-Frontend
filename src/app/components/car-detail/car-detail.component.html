@@ -1,10 +1,10 @@
 
 <div class="card text-center "></div>
-<div class="card-header">
+<div class="card-header text-center">
      
 </div>
   <div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col" *ngFor="let car of cars">
+    <div class="col text-center" *ngFor="let car of cars">
         <div class="card border-dark ">
         <img src="https://bilisimbilgi.com/wp-content/uploads/bmw-i8-goruntuler.jpg" alt="...">
         <div class="card-body tex">
@@ -16,9 +16,19 @@
               <li class="list-group-item"> <strong>Renk :  {{car.colorName}}</strong></li>
               <li class="list-group-item"> <strong>Model :  {{car.modelYear}}</strong></li>
               <li class="list-group-item"> <strong>Fiyat :  {{car.dailyPrice | currency}}</strong></li>
-           
+              <li class="list-group-item"> <strong>Kiralanan Tarih :  {{car.rentDate}}</strong></li>
+              <li class="list-group-item"> <strong>Bitiş Tarih :  {{car.returnDate}}</strong></li>
+              <li class="list-group-item"> <strong>En son kiralayan kişi :  {{car.firstName}}</strong></li>
               
+              <div style="border-radius: 10px;" *ngIf="!car.firstName">
+                <button type="button" routerLink="/cars/cars/cardetail/{{car.id}}/payment"  class="btn btn-outline-success" style="border-radius: 50px; width: 100%;; "> <strong>Kirala</strong> </button>
+              </div>
+              <div style="border-radius: 10px;" *ngIf="car.firstName">
+               <button  type="button"class="btn btn-outline-danger" style="border-radius: 50px; width: 100%;; cursor: not-allowed; opacity: 0.6; "> <strong>Kirala</strong> </button>
+             </div>
             </ul>
+          
+            
         </div>
       </div>
     </div>

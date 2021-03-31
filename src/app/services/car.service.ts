@@ -41,7 +41,8 @@ export class CarService {
   }
 
   getCarDetailsByColorAndBrand(colorId: number, brandId:number):Observable<ListRespsonseModel<Car>> {
-    let newPath = this.apiUrl+'/cars/getcolorandbrand?colorId=' + colorId + '&brandId=' + brandId
+    let newPath = this.apiUrl+'/cars/getcolorandbrand?colorId=' + colorId + '&brandId=' + brandId;
+  
     return this.HttpClient.get<ListRespsonseModel<Car>> (newPath)
   }
   add(car:Car):Observable<ResponseModel>{

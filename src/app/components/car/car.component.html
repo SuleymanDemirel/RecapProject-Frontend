@@ -45,7 +45,8 @@
           <div class="card border-success ">
             <div class="card-body">
               <h5 class="card-title"><strong> {{car.carName}}</strong></h5>
-              <img src="https://bilisimbilgi.com/wp-content/uploads/bmw-i8-goruntuler.jpg" class="card-img-top" alt="...">
+              <!-- <img src="https://bilisimbilgi.com/wp-content/uploads/bmw-i8-goruntuler.jpg" class="card-img-top" alt="..."> -->
+              <img src="{{path}}{{car.imagePath}}" width="400" height="420"class="card-img-top" />
               <p class="card-text"></p>
               <button routerLink="cars/cardetail/{{car.id}}" type="button" class="btn btn-outline-danger" style="border-radius: 50px; width: 100%;; ">Details</button>
              

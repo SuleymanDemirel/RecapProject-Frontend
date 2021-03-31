@@ -6,7 +6,8 @@
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col text-center" *ngFor="let car of cars" >
         <div class="card border-dark ">
-        <img src="https://bilisimbilgi.com/wp-content/uploads/bmw-i8-goruntuler.jpg" alt="...">
+        <!-- <img src="https://bilisimbilgi.com/wp-content/uploads/bmw-i8-goruntuler.jpg" alt="..."> -->
+        <img src="{{path}}{{car.imagePath}}" width="400" height="420"class="card-img-top" />
         <div class="card-body tex">
           <h5 class="card-title"> <strong>{{car.carName}}</strong> </h5>
           <p class="card-text"> <strong>Açıklama : {{car.description}}</strong> </p>

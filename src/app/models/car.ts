@@ -14,6 +14,6 @@ export interface Car{
     returnDate:Date;
     firstName:string;
     status :string;
-
+    imagePath:string
 
 }

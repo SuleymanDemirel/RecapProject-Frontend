@@ -30,8 +30,20 @@
 <ul class="list-group-item ">
     
     <div class="row mb-2 shadow p-3">
-       
-    <div class="col col-4">
+        <div *ngIf="!((brands || colors))" class="alert alert-info w-100" role="alert">
+            Not exist cars
+          </div>
+            <div class="col col-4">
+                <select [(ngModel)]="brandFilter"  class="form-select" aria-label="Default select example">
+                    <option *ngFor="let brand of brands" [value]="brand.brandId" [selected]="getSelectedBrand(brand.brandId)">{{brand.brandName}}</option>
+                  </select>
+            </div>
+            <div class="col col-4">
+                <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
+                    <option *ngFor="let color of colors" [value]="color.colorId" [selected]="getSelectedColor(color.colorId)">{{color.colorName}}</option>
+                  </select>
+            </div>
+    <!-- <div class="col col-4">
         <select [(ngModel)]="brandFilter" class="form-select" aria-label="Brand Selection">
             <option *ngFor="let brand of brands" [value]="brand.brandId" [selected]="getSelectedBrand(brand.brandId)">{{brand.brandName}}</option>
           </select>
@@ -40,9 +52,12 @@
         <select [(ngModel)]="colorFilter" class="form-select" aria-label="Color Selection">
             <option *ngFor="let color of colors" [value]="color.colorId" [selected]="getSelectedColor(color.colorId)">{{color.colorName}}</option>
           </select>
-    </div>
+    </div> -->
     <div class="col d-grid gap-2">
-        <a  routerLink="/cars/filter/{{colorFilter}}/{{brandFilter}}" class="btn btn-dark">Filter</a>
+        <a  routerLink="/cars/filter/brand/{{brandFilter}}/color/{{colorFilter}}" class="btn btn-dark">Filter</a>
+        <!-- <a  routerLink="/cars/filter/{{colorFilter}}/{{brandFilter}}" class="btn btn-dark">Filter</a> -->
+
+
     </div>
     <div class="d-grid gap-2" ><p></p>
         <a routerLink="/cars" class="btn btn-danger">Clear Filter</a>

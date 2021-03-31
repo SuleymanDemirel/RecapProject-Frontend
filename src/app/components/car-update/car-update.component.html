@@ -1,0 +1,61 @@
+<div class="content">
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-header"><h5 class="title"> Araç Güncelle</h5></div>
+            <div class="card-body">
+
+                <form [formGroup]="carUpdateForm"> 
+                    <div class="mb-3">
+                        <label for="id">Güncellenecek Araç Id</label>
+                    <div class="form-group">
+                        <input type="number" id="id" formControlName="id" class="form-control" placeholder="Araç Id" />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="brandId">Marka Id </label>
+                    <div class="form-group">
+                        <input type="number" id="brandId" formControlName="brandId" class="form-control" placeholder="Marka Id" />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="colorId">Renk Id </label>
+                    <div class="form-group">
+                        <input type="number" id="colorId" formControlName="colorId" class="form-control" placeholder="Renk Id" />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modelYear">Model Yılı </label>
+                    <div class="form-group">
+                        <input type="number" id="modelYear" formControlName="modelYear" class="form-control" placeholder="2021" />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dailyPrice">Fiyat  </label>
+                    <div class="form-group">
+                        <input type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control" placeholder="Fiyat" />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="carName">Araç İsmi  </label>
+                    <div class="form-group">
+                        <input type="text" id="carName" formControlName="carName" class="form-control" placeholder="Araç İsmi" />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description">Açıklama  </label>
+                    <div class="form-group">
+                        <input type="text" id="description" formControlName="description" class="form-control" placeholder="Açıklama" />
+                    </div>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-primary" (click)="update()">Güncelle</button>
+            </div>
+            
+        </div>
+        
+    </div>
+   
+</div>

@@ -12,10 +12,14 @@ export class RentalService {
   apiUrl = "https://localhost:44374/api"
   constructor(private httpClient:HttpClient) { }
 
-  getRental(rentalId:number):Observable<ListRespsonseModel<Rental>>{
-    let newPath = this.apiUrl + "/rentals/getrentalbyid?id="+rentalId
+  getRentalDetailsById(id:number):Observable<ListRespsonseModel<Rental>>{
+    let newPath = this.apiUrl + "/rentals/getrentaldetailsbyid?id="+id
     return this.httpClient.get<ListRespsonseModel<Rental>>(newPath)
   }
 
+  getAllRentals():Observable<ListRespsonseModel<Rental>>{
+    let newPath = this.apiUrl + "/rentals/getallrental";
+    return this.httpClient.get<ListRespsonseModel<Rental>>(newPath)
+  }
 }
 

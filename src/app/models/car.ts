@@ -13,6 +13,7 @@ export interface Car{
     rentDate:Date;
     returnDate:Date;
     firstName:string;
+    status :string;
 
 
 }

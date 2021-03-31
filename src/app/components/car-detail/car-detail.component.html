@@ -1,10 +1,10 @@
 
-<div class="card text-center "></div>
+
 <div class="card-header text-center">
      
 </div>
   <div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col text-center" *ngFor="let car of cars">
+    <div class="col text-center" *ngFor="let car of cars" >
         <div class="card border-dark ">
         <img src="https://bilisimbilgi.com/wp-content/uploads/bmw-i8-goruntuler.jpg" alt="...">
         <div class="card-body tex">
@@ -15,21 +15,53 @@
               <li class="list-group-item"> <strong>Marka :  {{car.brandName}}</strong></li>
               <li class="list-group-item"> <strong>Renk :  {{car.colorName}}</strong></li>
               <li class="list-group-item"> <strong>Model :  {{car.modelYear}}</strong></li>
-              <li class="list-group-item"> <strong>Fiyat :  {{car.dailyPrice | currency}}</strong></li>
-              <li class="list-group-item"> <strong>Kiralanan Tarih :  {{car.rentDate}}</strong></li>
-              <li class="list-group-item"> <strong>Bitiş Tarih :  {{car.returnDate}}</strong></li>
-              <li class="list-group-item"> <strong>En son kiralayan kişi :  {{car.firstName}}</strong></li>
+              <li class="list-group-item mb-3"> <strong>Fiyat :  {{car.dailyPrice | currency}}</strong></li>
               
-              <div style="border-radius: 10px;" *ngIf="!car.firstName">
-                <button type="button" routerLink="/cars/cars/cardetail/{{car.id}}/payment"  class="btn btn-outline-success" style="border-radius: 50px; width: 100%;; "> <strong>Kirala</strong> </button>
+              
+              <!-- <li class="list-group-item"> <strong>Kiralanan Tarih :  {{car.rentDate}}</strong></li>
+              <li class="list-group-item"> <strong>Bitiş Tarih :  {{car.returnDate}}</strong></li>-->
+             
+              <div *ngFor="let rental of rentals" >
+                <!-- <div  style="border-radius: 10px;" >
+               <button  *ngIf="rental" type="button"class="btn btn-outline-danger" style="border-radius: 50px; width: 100%;; cursor: not-allowed; opacity: 0.6; "> <strong>Kiralanamaz</strong> </button>
+              </div>  -->
+              <div  style="border-radius: 10px;"  > 
+                <button *ngIf="rental==null" type="button" routerLink="/cars/cars/cardetail/{{car.id}}/payment"  class="btn btn-outline-success mb-3" style="border-radius: 50px; width: 100%;; "> <strong>Kirala</strong> </button>
+                <button *ngIf="rental!=null"  type="button" class="btn btn-outline-danger mb-3" style="border-radius: 50px; width: 100%;; cursor: not-allowed; opacity: 0.6; "> <strong>Kiralanamaz</strong> </button>
+                
+                <button routerLink="/cars/cars/cardetail/{{car.id}}/update"  type="button" class="btn btn-primary" style="border-radius: 50px; width: 100%;; "> <strong>Güncelle</strong> </button>
               </div>
-              <div style="border-radius: 10px;" *ngIf="car.firstName">
-               <button  type="button"class="btn btn-outline-danger" style="border-radius: 50px; width: 100%;; cursor: not-allowed; opacity: 0.6; "> <strong>Kirala</strong> </button>
-             </div>
+              </div>
+          
+              
             </ul>
           
             
         </div>
       </div>
     </div>
+    
+
+    <div class="row row-cols-1  g-4">
+      <div class="col text-center" *ngFor="let rental of rentals">
+          <div class="card border-danger ">
+          <div class="card-body tex">
+            <h5 class="card-title"> <strong style="color: rgb(122, 0, 0);">Araç başkası tarafından kiralanmıştır.</strong> </h5>
+            <p class="card-text"> <strong></strong> </p>
+            <ul class="list-group list-group-flush">
+              <!-- <li class="list-group-item"> <strong>CarId :  {{rental.rentalId}}</strong></li> -->
+                <li class="list-group-item"> <strong>Kiralayan İsim :  {{rental.firstName}}</strong></li>
+                <li class="list-group-item"> <strong>Kiralama tarihi :  {{rental.rentDate}}</strong></li>
+                <li class="list-group-item"> <strong>Kontrat Bitiş Tarihi :  {{rental.returnDate}}</strong></li>
+                <li class="list-group-item"> <strong>Kiralanan Araç :  {{rental.carName}}</strong></li>
+  
+              
+              </ul>
+            
+              
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
+

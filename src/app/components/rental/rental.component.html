@@ -1,1 +1,33 @@
-<p>rental works!</p>
+
+
+
+
+  
+<div class="card text-center "></div>
+<div class="card-header text-center">
+     
+</div>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col text-center" *ngFor="let rental of rentals">
+        <div class="card border-dark ">
+        <div class="card-body tex">
+          <h5 class="card-title"> <strong>Kiralanmış Araçlar Listesi</strong> </h5>
+          <p class="card-text"> <strong></strong> </p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> <strong>CarId :  {{rental.carId}}</strong></li>
+              <li class="list-group-item"> <strong>İsim :  {{rental.firstName}}</strong></li>
+              <li class="list-group-item"> <strong>Kiralama tarihi :  {{rental.rentDate}}</strong></li>
+              <li class="list-group-item"> <strong>geri dönüş :  {{rental.returnDate}}</strong></li>
+              <li class="list-group-item"> <strong>Araç :  {{rental.carName}}</strong></li>
+
+            
+            </ul>
+          
+            
+        </div>
+      </div>
+    </div>
+</div>
+
+
+

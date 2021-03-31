@@ -5,4 +5,8 @@
     routerLink="/cars/color/{{color.colorId}}" 
     *ngFor="let color of colors" 
     [class]="getCurrentColorClass(color)">{{color.colorName}}</li>
+
+    <li class="list-group-item  align-items-center">
+      <button routerLink="colors/update" class="btn btn-danger "> <strong>Renkleri Güncelle</strong> </button>
+  </li>
   </ul>

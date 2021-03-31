@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import{ HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +22,12 @@ import { BrandFilterPipe } from './pipes/brand-filter.pipe';
 import { ColorFilterPipe } from './pipes/color-filter.pipe';
 import { CarRentComponent } from './components/car-rent/car-rent.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { BrandUpdatedComponent } from './components/brand-updated/brand-updated.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
 
 
 
@@ -40,7 +46,13 @@ import { PaymentComponent } from './components/payment/payment.component';
     BrandFilterPipe,
     ColorFilterPipe,
     CarRentComponent,
-    PaymentComponent
+    PaymentComponent,
+    CarAddComponent,
+    BrandAddComponent,
+    ColorAddComponent,
+    ColorUpdateComponent,
+    BrandUpdatedComponent,
+    CarUpdateComponent
 
 
 
@@ -50,6 +62,7 @@ import { PaymentComponent } from './components/payment/payment.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     FormsModule,
     ToastrModule.forRoot({
       positionClass:"toast-top-full-width"

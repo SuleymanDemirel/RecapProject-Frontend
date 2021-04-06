@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import{ HttpClientModule} from '@angular/common/http';
+import{ HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
@@ -28,6 +28,15 @@ import { ColorAddComponent } from './components/color-add/color-add.component';
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { BrandUpdatedComponent } from './components/brand-updated/brand-updated.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { LoginComponent } from './components/authComponent/login/login.component';
+import { RegisterComponent } from './components/authComponent/register/register.component';
+import { AuthInterceptor } from './components/interceptors/auth.interceptor';
+import { CustomerComponent } from './components/customer/customer.component';
+import { LocalStorageModule } from 'angular-2-local-storage';
+import { LogoutComponent } from './components/authComponent/logout/logout.component';
+import { UserComponent } from './components/user/user.component';
+
+
 
 
 
@@ -52,7 +61,14 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
     ColorAddComponent,
     ColorUpdateComponent,
     BrandUpdatedComponent,
-    CarUpdateComponent
+    CarUpdateComponent,
+    LoginComponent,
+    RegisterComponent,
+    CustomerComponent,
+    LogoutComponent,
+    UserComponent
+
+
 
 
 
@@ -64,14 +80,20 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    LocalStorageModule.forRoot({
+      prefix: "storage",
+      storageType: "localStorage"
+    }),
     ToastrModule.forRoot({
-      positionClass:"toast-top-full-width"
+      positionClass:"toast-bottom-right"
     })
 
     
     
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

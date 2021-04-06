@@ -1,0 +1,24 @@
+
+<h4>Müşteriler</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Müşteri Adı</th>
+            <th>Firma</th>
+            <th>cstmrId</th>
+            <th>UserId</th>
+            <th>email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.customerName}}</td>
+            <td>{{customer.companyName}}</td>
+            <td>{{customer.customerId}}</td>
+            <td>{{customer.userId}}</td>
+            <td>{{customer.email}}</td>
+            <!-- <button routerLink="/customers/{{customer.customerId}}" type="button" class="btn btn-outline-danger" style="border-radius: 50px; width: 100%;; ">Details</button> -->
+        </tr>
+    </tbody>
+</table>
+

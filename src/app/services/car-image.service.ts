@@ -13,12 +13,12 @@ export class CarImageService {
   constructor(private httpClient:HttpClient) { }
 
   getAllCarImages():Observable<ListRespsonseModel<CarImage>>{
-    let newPath = this.apiUrl +"carsImage/getall"
+    let newPath = this.apiUrl +"/carsImage/getall"
     return this.httpClient.get<ListRespsonseModel<CarImage>>(newPath);
 
   }
   getCarImageById(id:number):Observable<ListRespsonseModel<CarImage>>{
-    let newPath = this.apiUrl +"carsImage/getcarimagebyid?id="+id
+    let newPath = this.apiUrl +"/carsImage/getcarimagebyid?id="+id
     return this.httpClient.get<ListRespsonseModel<CarImage>>(newPath);
 
   }

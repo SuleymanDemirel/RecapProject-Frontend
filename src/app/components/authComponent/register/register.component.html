@@ -1,0 +1,73 @@
+
+<div class="container  text-center col-md-6 container ">
+    <div class=" mb-3"></div>
+    <div class="card border-success mb-3" style="max-width: 25rem;">
+        <div class="card-header text-center"> <strong>Kayıt Formu</strong> </div>
+        <div class="card-body text-dark">
+            <main class="form-signin">
+                <form [formGroup]="registerForm">
+                  <img
+                    class="mb-4"
+                    src="https://icons.iconarchive.com/icons/graphicloads/flat-finance/256/person-icon.png"
+                    alt=""
+                    width="72"
+                    height="67"
+                  />
+                  <h1 class="h3 mb-3 fw-normal">Kayıt ol</h1>
+            
+                  <div class="form-floating mb-3">
+                      <input
+                      formControlName="firstName"
+                        type="text"
+                        class="form-control"
+                        id="firstName"
+                        placeholder="Süleyman"
+                      />
+                      <label for="firstName">Ad</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input
+                      formControlName="lastName"
+                        type="text"
+                        class="form-control"
+                        id="lastName"
+                        placeholder="Demirel"
+                      />
+                      <label for="lastName">Soyad</label>
+                    </div>
+                  <div class="form-floating mb-3">
+                    <input
+                    formControlName="email"
+                      type="email"
+                      class="form-control"
+                      id="floatingInput"
+                      placeholder="name@example.com"
+                    />
+                    <label for="floatingInput ">E-posta</label>
+                  </div>
+                  <div class="form-floating mb-3 ">
+                    <input
+                    formControlName="password"
+                      type="password"
+                      class="form-control"
+                      id="floatingPassword"
+                      placeholder="Password"
+                    />
+                    <label for="floatingPassword">Parola</label>
+                  </div>
+            
+                  <div class="checkbox mb-3 ">
+                    <label>
+                      <input type="checkbox" value="remember-me" /> Remember me
+                    </label>
+                  </div>
+                  <button class="w-100 btn btn-lg btn-primary" (click)="register()">
+                    Kayıt Ol
+                  </button>
+                  <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+                </form>
+              </main>
+        </div>
+      </div>
+
+</div>

@@ -12,23 +12,20 @@
           <h5 class="card-title"> <strong>{{car.carName}}</strong> </h5>
           <p class="card-text"> <strong>Açıklama : {{car.description}}</strong> </p>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item"> <strong>CarId :  {{car.id}}</strong></li>
+            <!-- <li class="list-group-item"> <strong>CarId :  {{car.id}}</strong></li> -->
+            <li class="list-group-item"> <strong>Findeks Puanı :  {{car.findeksPoint}}</strong></li>
               <li class="list-group-item"> <strong>Marka :  {{car.brandName}}</strong></li>
               <li class="list-group-item"> <strong>Renk :  {{car.colorName}}</strong></li>
               <li class="list-group-item"> <strong>Model :  {{car.modelYear}}</strong></li>
               <li class="list-group-item mb-3"> <strong>Fiyat :  {{car.dailyPrice | currency}}</strong></li>
               
-              
-              <!-- <li class="list-group-item"> <strong>Kiralanan Tarih :  {{car.rentDate}}</strong></li>
-              <li class="list-group-item"> <strong>Bitiş Tarih :  {{car.returnDate}}</strong></li>-->
+           
              
               <div *ngFor="let rental of rentals" >
-                <!-- <div  style="border-radius: 10px;" >
-               <button  *ngIf="rental" type="button"class="btn btn-outline-danger" style="border-radius: 50px; width: 100%;; cursor: not-allowed; opacity: 0.6; "> <strong>Kiralanamaz</strong> </button>
-              </div>  -->
+            
               <div  style="border-radius: 10px;"  > 
-                <button *ngIf="rental==null" type="button" routerLink="/cars/cars/cardetail/{{car.id}}/payment"  class="btn btn-outline-success mb-3" style="border-radius: 50px; width: 100%;; "> <strong>Kirala</strong> </button>
-                <button *ngIf="rental!=null"  type="button" class="btn btn-outline-danger mb-3" style="border-radius: 50px; width: 100%;; cursor: not-allowed; opacity: 0.6; "> <strong>Kiralanamaz</strong> </button>
+                <button  type="button" routerLink="/cars/cars/cardetail/{{car.id}}/payment"  class="btn btn-outline-success mb-3" style="border-radius: 50px; width: 100%;; "> <strong>Kirala</strong> </button>
+                <button   type="button" class="btn btn-outline-danger mb-3" style="border-radius: 50px; width: 100%;; cursor: not-allowed; opacity: 0.6; "> <strong>Kiralanamaz</strong> </button>
                 
                 <button routerLink="/cars/cars/cardetail/{{car.id}}/update"  type="button" class="btn btn-primary" style="border-radius: 50px; width: 100%;; "> <strong>Güncelle</strong> </button>
               </div>

@@ -5,6 +5,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CarImageService } from 'src/app/services/car-image.service';
 import { CarImage } from 'src/app/models/carImage';
+import { UserService } from 'src/app/services/user.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { User } from 'src/app/models/user';
 
 
 @Component({
@@ -17,10 +20,12 @@ export class CarComponent implements OnInit {
   currentCar:Car;
   filterText="";
   carImages:CarImage[]=[];
-
+  email:string;
+  users:User[];
   path : string = "https://localhost:44374/Images/";
   
-  constructor(private carService:CarService, private activatedRoute:ActivatedRoute, private toastrService:ToastrService, private carImageService:CarImageService) { }
+  constructor(private carService:CarService, private activatedRoute:ActivatedRoute,
+     private toastrService:ToastrService, private carImageService:CarImageService,private userService:UserService, private localStorageService:LocalStorageService) { }
 
   ngOnInit(): void {
    this.activatedRoute.params.subscribe(params=>{
@@ -33,6 +38,7 @@ export class CarComponent implements OnInit {
      }else{
        this.getCars()
        this.getAllCarsImages()
+       this.getUserByMail(this.email);
      }
    })
   }
@@ -69,6 +75,11 @@ export class CarComponent implements OnInit {
       this.carImages = response.data
         })
   }
-
+  getUserByMail(email:string){
+    this.email = this.localStorageService.get("email");
+    this.userService.getUserByMail(this.email).subscribe(response=>{
+      this.users = response.data
+    })
+  }
 
 }

@@ -5,5 +5,6 @@ export interface Customer{
     companyName:string; 
     email:string; 
     id:string;
+    findeksPoint:number;
 
 }

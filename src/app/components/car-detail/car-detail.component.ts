@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
 import { Rental } from 'src/app/models/rental';
@@ -20,7 +20,8 @@ export class CarDetailComponent implements OnInit {
   carImages:CarImage[]=[];
   path : string = "https://localhost:44374/Images/";
   apiUrl : string = "https://localhost:44374/api";
-  constructor(private carService:CarService,private activatedRoute:ActivatedRoute, private rentalService:RentalService, private carImageService:CarImageService) { }
+  constructor(private carService:CarService,private activatedRoute:ActivatedRoute, private rentalService:RentalService,
+     private carImageService:CarImageService, private router:Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -51,7 +52,7 @@ export class CarDetailComponent implements OnInit {
     })
   }
 
-
+ 
 
 
 }

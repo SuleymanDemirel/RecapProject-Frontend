@@ -15,5 +15,6 @@ export interface Car{
     firstName:string;
     status :string;
     imagePath:string
+    findeksPoint:number;
 
 }

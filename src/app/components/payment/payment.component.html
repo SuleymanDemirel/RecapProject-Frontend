@@ -2,21 +2,13 @@
 <div class="row  row-cols-md-2 g-4 " >
    
 <div class="container mb-1 ">
-  
+ 
     <div class=" mb-3"></div>
+    
     <div class="card border-dark mb-3" style="max-width: 25rem;">
-        <div class="card-header text-center"> <strong>Ödeme Sayfası</strong> </div>
+        <div class="card-header text-center"> <strong>Kart Bilgileri</strong> </div>
         <div class="card-body text-dark">
-            <div class="row row-cols-md-2 g-4">
-                <div class=" col-5 mb-1 ">
-                    <label for="card" class="form-label"> <strong>Kiralama Tarihi : </strong> </label>
-                 <input type="date" class="form-control" name="yas">
-                </div>
-                <div class=" col-5 mb-1 ">
-                    <label for="card" class="form-label"> <strong>Dönüş Tarihi : </strong> </label>
-                 <input type="date" class="form-control" name="yas">
-                </div>
-            </div>
+
             <div class=" mb-1 ">
                 <label for="card" class="form-label"> <strong>Kart üzerindeki AD-SOYAD</strong> </label>
                 <input type="text" placeholder="Süleyman Demirel" class="form-control" id="card">
@@ -48,6 +40,8 @@
     
 </div>
 
+
+
 <div class="row  g-4">
     <div class="col text-center" *ngFor="let car of cars">
         <div class="card border-dark ">
@@ -56,21 +50,130 @@
           <h5 class="card-title"> <strong>{{car.carName}}</strong> </h5>
           <p class="card-text"> <strong>Açıklama : {{car.description}}</strong> </p>
           <ul class="list-group list-group-flush">
-            
+      
               <li class="list-group-item"> <strong>Marka :  {{car.brandName}}</strong></li>
               <li class="list-group-item"> <strong>Renk :  {{car.colorName}}</strong></li>
               <li class="list-group-item"> <strong>Model :  {{car.modelYear}}</strong></li>
               <li class="list-group-item"> <strong>Fiyat :  {{car.dailyPrice | currency}}</strong></li>
-          
               
             </ul>
-          
-            
         </div>
       </div>
     </div>
 </div>
 </div>
 
+
+
+
+
+<!-- <div class="content">
+  <div class="col-md-12">
+      <div class="card">
+          <div class="card-header"><h5 class="title"> Rent</h5></div>
+          <div class="card-body">
+
+              <form [formGroup]="rentalAddForm"> 
+                  <div class="mb-3" >
+                      <label for="rentalId">rentalId</label>
+                  <div class="form-group">     
+                      <input type="number" id="rentalId" formControlName="rentalId" class="form-control" />
+                  </div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="carId">carId </label>
+                  <div class="form-group">     
+                      <input type="number" id="carId" formControlName="carId" class="form-control"   />
+                  </div>
+                  </div>
+
+                  <div class="mb-3">
+                      <label for="customerId">customerId</label>
+                  <div class="form-group">
+                      <input type="number" id="customerId" formControlName="customerId" class="form-control" placeholder="customerId" />
+                  </div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="rentDate">rentDate </label>
+                  <div class="form-group">
+                      <input type="date" id="rentDate" formControlName="rentDate" class="form-control" placeholder="rentDate" />
+                  </div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="returnDate">returnDate</label>
+                  <div class="form-group">
+                      <input type="date" id="returnDate" formControlName="returnDate" class="form-control" placeholder="returnDate" />
+                  </div>
+                  </div>
+              
+              </form>
+          </div>
+          <div class="card-footer">
+              <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+          </div>
+          
+      </div>  
+  </div>
+</div> -->
+
+
+
+
+<div class="container mb-1 ">
+ 
+  <div class=" mb-3"></div>
+  
+  <div class="card border-dark mb-3" style="max-width: 25rem;">
+      <div class="card-header text-center"> <strong>Kiralama Bölümü</strong> </div>
+      <div class="card-body text-dark">
+
+          <form [formGroup]="rentalAddForm">
+
+            <div class="row row-cols-md-2 g-4">
+              <div class=" col-5 mb-1 ">
+                <label for="rentDate" class="form-label" > <strong>Kiralama Tarihi : </strong> </label>
+                <div class="form-group">
+                  <input type="date" class="form-control" id="rentDate" formControlName="rentDate" class="form-control"  >
+                </div>
+              </div>
+
+              <div class=" col-5 mb-1 ">
+                  <label for="returnDate" class="form-label"> <strong>Dönüş Tarihi : </strong> </label>
+                  <div class="form-group">
+                  <input type="date" id="returnDate" formControlName="returnDate" class="form-control" >
+                </div>
+              </div>
+          </div>
+          <div class="row row-cols-md-3 g-4">
+          <div class="mb-1" >
+            <label for="rentalId">rentalId</label>
+        <div class="form-group">     
+            <input type="number" id="rentalId" formControlName="rentalId" class="form-control" />
+        </div>
+        </div>
+        <div class="mb-1">
+            <label for="carId">carId </label>
+        <div class="form-group">     
+            <input type="number" id="carId" formControlName="carId" class="form-control"   />
+        </div>
+        </div>
+
+        <div class="mb-1">
+            <label for="customerId">customerId</label>
+        <div class="form-group">
+            <input type="number" id="customerId" formControlName="customerId" class="form-control" placeholder="customerId" />
+        </div>
+        </div>
+      </div>
+        </form>
+
+            <div class="btn-group text-center  " *ngFor="let car of cars">
+              <button (click)="add()" (click)="paymentWork(car)" type="button" class="btn btn-success " style=" width: 250px;"><strong>Satın Al</strong> </button>
+             
+          </div>
+      </div>
+    </div>
+  
+</div>
 
 

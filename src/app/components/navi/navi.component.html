@@ -7,68 +7,28 @@
     </button>
    
     <div style="float: right;">
-    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
-        <li class="nav-item dropdown " >
-          
-          
-          <a class=" nav-link dropdown-toggle " style="color: white;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          
-            <strong>Giriş/Kayıt/Çıkış</strong>  
-          </a>
-         
-            <ul  class="dropdown-menu  "  aria-labelledby="navbarDropdown">
-            <li  ><a class="dropdown-item"  routerLink="/login" > Giriş Yap </a></li>
-            <li><a class="dropdown-item" routerLink="/register" >Kayıt Ol</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" (click)="logout()">Çıkış Yap</a></li>
-          </ul>
-         
-          
-        </li>
-      
-      </ul>
-      
-    </div> -->
+  
     <div  *ngIf="checkToLogin()==false" >
       <button  class=" btn btn-lg btn-primary" routerLink="/login"  style="margin-right: 5px;" > Giriş yap </button>
       <button class=" btn btn-lg btn-primary " routerLink="/register" > Kayıt ol </button>
     </div>
 
-    <div *ngIf="checkToLogin()==true">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
-        <li class="nav-item dropdown " >
-          
-          
-          <a class=" nav-link dropdown-toggle " style="color: white;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <div  *ngFor="let user of users" >
-               <strong>{{user.firstName}} </strong>  
-             </div> 
-  
-          </a>
-            <ul  class="dropdown-menu  "  aria-labelledby="navbarDropdown">
-           
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" (click)="logout()">Çıkış Yap</a></li>
-          </ul>
-         
-          
-        </li>
-      
-      </ul>
-      
-    </div>
-    </div>
+  <div *ngIf="checkToLogin()==true">
+  <div class="dropdown">
+    <div class="btn-group">
+      <button *ngFor="let user of users" type="button" class="btn btn-danger dropdown-toggle"data-bs-toggle="dropdown" aria-haspopup="true" id="navbarDropdown"  aria-expanded="false">
+        <strong>{{user.firstName}} </strong> 
+      </button>
+      <div class="dropdown-menu">
     
-
-
-
-
-  <!-- <div *ngFor="let user of users">
-    <a style="color: white;"> <strong>{{user.firstName}}</strong> </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" (click)="logout()">Çıkış Yap</a>
+      </div>
+    </div>
   </div>
-    -->
+</div>
+
+
    
   </div>
 

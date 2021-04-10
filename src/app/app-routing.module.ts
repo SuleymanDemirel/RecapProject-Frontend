@@ -20,6 +20,7 @@ import { LoginGuard } from './components/guards/login.guard';
 import { PaymentComponent } from './components/payment/payment.component';
 
 import { RentalComponent } from './components/rental/rental.component';
+import { UserUpdateComponent } from './components/user-update/user-update.component';
 import { UserComponent } from './components/user/user.component';
 
 
@@ -45,6 +46,7 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
   {path:"user",component:UserComponent},
+  {path:"user/update",component:UserUpdateComponent},
   {path:"customers",component:CustomerComponent}
 
 

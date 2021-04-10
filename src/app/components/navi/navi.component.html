@@ -1,11 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-light" style="height: 245px;">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink = "/cars">Ana Sayfa</a>
-   
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-   
+    <a > <img src="https://icons.iconarchive.com/icons/itzikgur/my-seven/256/Travel-BMV-icon.png" alt="" width=""></a>
+    <a > <img src="https://r70.cooltext.com/rendered/cooltext381227023537933.png" ></a>   
     <div style="float: right;">
   
     <div  *ngIf="checkToLogin()==false" >
@@ -16,13 +12,13 @@
   <div *ngIf="checkToLogin()==true">
   <div class="dropdown">
     <div class="btn-group">
-      <button *ngFor="let user of users" type="button" class="btn btn-danger dropdown-toggle"data-bs-toggle="dropdown" aria-haspopup="true" id="navbarDropdown"  aria-expanded="false">
-        <strong>{{user.firstName}} </strong> 
+      <button *ngFor="let user of users"  type="button" class="btn btn-dark dropdown-toggle"data-bs-toggle="dropdown" aria-haspopup="true" id="navbarDropdown"  aria-expanded="false">
+       <img src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Places-user-identity-icon.png" alt=""> <strong>{{user.firstName}} </strong> 
       </button>
       <div class="dropdown-menu">
-    
+        <a class="dropdown-item" type="button" routerLink="/user/update">Ayarlar</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" (click)="logout()">Çıkış Yap</a>
+        <a class="dropdown-item" type="button" (click)="logout()">Çıkış Yap</a>
       </div>
     </div>
   </div>

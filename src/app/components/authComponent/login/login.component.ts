@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,FormControl,Validators, EmailValidator } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/models/user';
 
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   users:User[];
   email:string;
   constructor(private formBuilder:FormBuilder,private authService:AuthService,private toastrService:ToastrService, 
-    private localStorageService:LocalStorageService,private userService:UserService) { }
+    private localStorageService:LocalStorageService,private userService:UserService,private router:Router) { }
 
   ngOnInit(): void {
     this.createLoginForm()
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit {
       let loginModel = Object.assign({},this.loginForm.value)
       this.authService.login(loginModel).subscribe(response=>{
         this.toastrService.success(response.message)
-      
+        this.router.navigate(['cars'])
         this.localStorageService.add("token",response.data.token)
         this.localStorageService.add("expiration",response.data.expiration)
         this.localStorageService.add("email",loginModel.email)

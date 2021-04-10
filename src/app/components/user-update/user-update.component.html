@@ -1,0 +1,60 @@
+<div class="container mb-3">
+
+
+
+<div class="content mb-3">
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-header bg-white"><h5 class="title"> Kullanıcı Güncelle</h5></div>
+            <div class="card-body">
+
+                <form [formGroup]="UserUpdateForm"> 
+                    <div class="mb-3">
+                        <label for="id">Güncellenecek Kullanıcı Id</label>
+                    <div class="form-group">
+                        <input type="number" id="id" formControlName="id" class="form-control"  />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="firstName">İsim  </label>
+                    <div class="form-group">
+                        <input type="text" id="firstName" formControlName="firstName" class="form-control"  />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastName">Soyisim </label>
+                    <div class="form-group">
+                        <input type="text" id="lastName" formControlName="lastName" class="form-control"  />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email </label>
+                    <div class="form-group">
+                        <input type="text" id="email" formControlName="email" class="form-control" />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordSalt">PasswordSalt  </label>
+                    <div class="form-group">
+                        <input type="text" id="passwordSalt" formControlName="passwordSalt" class="form-control"  />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordHash">PasswordHash  </label>
+                    <div class="form-group">
+                        <input type="text" id="passwordHash" formControlName="passwordHash" class="form-control"  />
+                    </div>
+                    </div>
+                  
+                    
+                </form>
+            </div>
+            <div class="card-footer bg-white">
+                <button class="btn btn-fill btn-primary" (click)="update()">Güncelle</button>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+</div>

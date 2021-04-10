@@ -1,39 +1,47 @@
-<div class="mb-3">
-</div>
-  <div class="row ">
 
-    <div class=" col-sm-5">
-      <label for="filterText" class="form-label"> <strong>Ara</strong> </label>
-      <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Araç ismi giriniz..">
+  <div class="card text-dark bg-white  "  >
+  
+    <div class="card-body">
+      <div class="row  ">
+    
+        <div class="col-7" >
+          <app-car-filter></app-car-filter>
+        </div>
+        
+        <div class="card text-dark bg-white  col-5" *ngFor="let user of users" style="position: relative; right: 120px;">
+          <div class="card-header bg-white text-center" style="color: rgb(2, 129, 57);"><strong>{{user.firstName}} {{user.lastName}}</strong></div>
+          <div class="card-body">
+            <h5 class="card-title " style="color: rgb(129, 27, 2);" >Findeks Puanınınz: {{user.findeksPoint}}</h5>
+            <h5 class="card-title " style="color: rgb(129, 27, 2);" >Şehir: {{user.companyName}}</h5>
+            <h5 class="card-title " style="color: rgb(129, 27, 2);" >Email: {{user.email}}</h5>
+          </div>
+        </div>
+   
+        
+        <div class="row   col-8 " style="position: relative; left: 150px;">
+          <label for="filterText" class="form-label"> <strong>Araç ara:</strong> </label>
+          <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Araç ismi giriniz..">
+        </div>
+        <div *ngIf="filterText" class="alert alert-primary">
+          {{filterText}} aradınız..
+        </div>
+
+        </div>
+     
     </div>
-    <div *ngIf="filterText" class="alert alert-primary">
-      {{filterText}} aradınız..
-    </div>
-    <div class="card text-dark bg-white mb-3 col-sm-4" *ngFor="let user of users" style="float: right;  ">
-      <div class="card-header bg-white text-center" style="color: rgb(2, 129, 57);"><strong>{{user.firstName}} {{user.lastName}}</strong></div>
-      <div class="card-body">
-        <h5 class="card-title text-center" style="color: rgb(129, 27, 2);" >Findeks Puanınınz : {{user.findeksPoint}}</h5>
-       
-      </div>
-    </div>
-    </div>
-
-
-
-
- 
+  </div>
 
 
 <div class="card text-center"> 
   
-  
     <div class="row " >
-        <div class="col-sm-6 mb-3" *ngFor="let car of cars | filterPipe:filterText" >
+        <div class="col-sm-4 mb-3" *ngFor="let car of cars | filterPipe:filterText" >
           <div class="card border-success ">
             <div class="card-body">
               <h5 class="card-title"><strong> {{car.carName}}</strong></h5>
               <!-- <img src="https://bilisimbilgi.com/wp-content/uploads/bmw-i8-goruntuler.jpg" class="card-img-top" alt="..."> -->
-              <img src="{{path}}{{car.imagePath}}" width="400" height="420"class="card-img-top" />
+              <img src="{{path}}{{car.imagePath}}" height="220" class="card-img-top deneme" />
+              
               <p class="card-text"></p>
               <button routerLink="cars/cardetail/{{car.id}}" type="button" class="btn btn-outline-danger" style="border-radius: 50px; width: 100%;; ">Details</button>
              
@@ -46,14 +54,10 @@
                 <li class="list-group-item"> <strong>Fiyat :  {{car.dailyPrice | currency}}</strong></li>
                 <li class="list-group-item"> <strong>Findeks Point :  {{car.findeksPoint}}</strong></li>
               </ul>
-              <div class="card-footer">
-
-
-            </div>
+             
           </div>
         </div>    
         
   </div>
 </div>
-
 

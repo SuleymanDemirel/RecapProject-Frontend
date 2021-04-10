@@ -1,69 +1,39 @@
-<!-- <div class="card mb-2">
+
+<div style="float: right;"> 
+<div class="card text-dark bg-white col-8  "*ngIf="checkToLogin()==true" >
+    <div class="card-header bg-white text-center" style="color: rgb(2, 129, 57);"><strong>Renk&Marka Listele </strong></div>
     <div class="card-body">
-
-        <div class="row justify-content-evenly">
-            <div class="col col-md-6">               
-                <select [(ngModel)]="brandFilter" class="form-select form-select mb-3" aria-label="Default select example">
-                    <option *ngFor="let brand of brands" [value] = "brand.brandId"
-                    [selected] = "getSelectedBrand(brand.brandId)">{{brand.brandName}}</option>
-                </select>
-            </div>
-            <div class="col col-md-6">
-                <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
-                    <option *ngFor="let color of colors" 
-                    [selected] = "getSelectedColor(color.colorId)" [value]="color.colorId">{{color.colorName}}</option>
-                </select>
-            </div>
-            <div class="col-lg-auto col-sm-12">
-                <button class="btn btn btn-dark me-3"
-                routerLink="/cars/filter/{{colorFilter}}/{{brandFilter}}">Filtrele</button> 
-           
-                <button
-                    routerLink="/cars" class="btn btn-danger">Temizle</button>
+   
+      <div class="card-title text-center">
+        <div class="row ">
+            <div *ngIf="!((brands || colors))" class="alert alert-info w-100" role="alert">
+                Not exist cars
+              </div>
+                <div class="col col-4">
+                    <select [(ngModel)]="brandFilter"  class="form-select" aria-label="Default select example">
+                        <option *ngFor="let brand of brands" [value]="brand.brandId" [selected]="getSelectedBrand(brand.brandId)">{{brand.brandName}}</option>
+                      </select>
                 </div>
-           
-        </div>
-
-    </div>
-</div> -->
-
-<ul class="list-group-item ">
+                <div class="col col-4">
+                    <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
+                        <option *ngFor="let color of colors" [value]="color.colorId" [selected]="getSelectedColor(color.colorId)">{{color.colorName}}</option>
+                      </select>
+                </div>
     
-    <div class="row mb-2 shadow p-3">
-        <div *ngIf="!((brands || colors))" class="alert alert-info w-100" role="alert">
-            Not exist cars
-          </div>
-            <div class="col col-4">
-                <select [(ngModel)]="brandFilter"  class="form-select" aria-label="Default select example">
-                    <option *ngFor="let brand of brands" [value]="brand.brandId" [selected]="getSelectedBrand(brand.brandId)">{{brand.brandName}}</option>
-                  </select>
-            </div>
-            <div class="col col-4">
-                <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
-                    <option *ngFor="let color of colors" [value]="color.colorId" [selected]="getSelectedColor(color.colorId)">{{color.colorName}}</option>
-                  </select>
-            </div>
-    <!-- <div class="col col-4">
-        <select [(ngModel)]="brandFilter" class="form-select" aria-label="Brand Selection">
-            <option *ngFor="let brand of brands" [value]="brand.brandId" [selected]="getSelectedBrand(brand.brandId)">{{brand.brandName}}</option>
-          </select>
+        <div class="col d-grid gap-2 col-4 mb-3">
+            <a  routerLink="/cars/filter/brand/{{brandFilter}}/color/{{colorFilter}}" class="btn btn-dark">Filter</a>
+    
+        </div>
+        <div class="d-grid gap-2  " >
+            <a routerLink="/cars" class="btn btn-danger">Clear Filter</a>
+        </div>
+        
+    
     </div>
-    <div class="col col-4">
-        <select [(ngModel)]="colorFilter" class="form-select" aria-label="Color Selection">
-            <option *ngFor="let color of colors" [value]="color.colorId" [selected]="getSelectedColor(color.colorId)">{{color.colorName}}</option>
-          </select>
-    </div> -->
-    <div class="col d-grid gap-2">
-        <a  routerLink="/cars/filter/brand/{{brandFilter}}/color/{{colorFilter}}" class="btn btn-dark">Filter</a>
-        <!-- <a  routerLink="/cars/filter/{{colorFilter}}/{{brandFilter}}" class="btn btn-dark">Filter</a> -->
-
-
+    
+      </div>
+     
     </div>
-    <div class="d-grid gap-2" ><p></p>
-        <a routerLink="/cars" class="btn btn-danger">Clear Filter</a>
-    </div>
-    <p></p>
-
+  </div>
 </div>
 
-</ul>

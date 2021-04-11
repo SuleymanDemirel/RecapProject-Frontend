@@ -13,6 +13,7 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
 import { CarComponent } from './components/car/car.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { CreditCartComponent } from './components/credit-cart/credit-cart.component';
 
 import { CustomerComponent } from './components/customer/customer.component';
 import { LoginGuard } from './components/guards/login.guard';
@@ -47,7 +48,8 @@ const routes: Routes = [
   {path:"register",component:RegisterComponent},
   {path:"user",component:UserComponent},
   {path:"user/update",component:UserUpdateComponent},
-  {path:"customers",component:CustomerComponent}
+  {path:"customers",component:CustomerComponent},
+  {path:"cart/add",component:CreditCartComponent}
 
 
 ];

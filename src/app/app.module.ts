@@ -36,6 +36,7 @@ import { LocalStorageModule } from 'angular-2-local-storage';
 import { LogoutComponent } from './components/authComponent/logout/logout.component';
 import { UserComponent } from './components/user/user.component';
 import { UserUpdateComponent } from './components/user-update/user-update.component';
+import { CreditCartComponent } from './components/credit-cart/credit-cart.component';
 
 
 
@@ -68,7 +69,8 @@ import { UserUpdateComponent } from './components/user-update/user-update.compon
     CustomerComponent,
     LogoutComponent,
     UserComponent,
-    UserUpdateComponent
+    UserUpdateComponent,
+    CreditCartComponent
 
 
 

@@ -1,0 +1,58 @@
+<div class="container mb-1 ">
+ 
+    <div class=" mb-3"></div>
+    
+    <div class="card border-dark mb-3" style="max-width: 25rem;">
+        <div class="card-header text-center"> <strong>Kart Bilgileri</strong> </div>
+        <div class="card-body text-dark">
+
+            <form [formGroup]="creditCartAddForm">
+             
+             
+               
+                <div class="row row-cols-md-2 g-4">
+                  <div class=" col-5 mb-1 ">
+                    <label for="creditCartId" class="form-label" > <strong>creditCartId </strong> </label>
+                    <div class="form-group">
+                      <input type="number" class="form-control" id="creditCartId" formControlName="creditCartId" class="form-control"  >
+                    </div>
+                  </div>
+    
+                  <div class=" col-5 mb-1 ">
+                      <label for="firstNameAndLastName" class="form-label"> <strong>firstNameAndLastName</strong> </label>
+                      <div class="form-group">
+                      <input type="text" id="firstNameAndLastName" formControlName="firstNameAndLastName" class="form-control" >
+                    </div>
+                  </div>
+              </div>
+              <div class="row row-cols-md-3 g-4">
+              <div class="mb-1" >
+                <label for="cvv">cvv</label>
+            <div class="form-group">     
+                <input type="number" id="cvv" formControlName="cvv" class="form-control" />
+            </div>
+            </div>
+            <div class="mb-1">
+                <label for="cartNumber">cartNumber </label>
+            <div class="form-group">     
+                <input type="text" id="cartNumber" formControlName="cartNumber" class="form-control"   />
+            </div>
+            </div>
+    
+            <div class="mb-1">
+                <label for="date">date</label>
+            <div class="form-group">
+                <input type="text" id="date" formControlName="date" class="form-control" placeholder="date" />
+            </div>
+            </div>
+          </div>
+            </form>
+
+            <div class="btn-group text-center  " >
+                <button (click)="add()"  type="button" class="btn btn-success " style=" width: 250px;"><strong> Kartı Ekle</strong> </button>
+               
+            </div>
+        </div>
+      </div>
+    
+</div>

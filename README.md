@@ -1,4 +1,7 @@
 # RecapProjectFrontend
+![RentACarProject](https://user-images.githubusercontent.com/72786825/114566360-da755d80-9c7a-11eb-9978-91c8a376b007.png)
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 

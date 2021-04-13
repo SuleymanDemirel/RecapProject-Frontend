@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-light" style="height: 245px;">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-light" style="height: 245px;">
   <div class="container-fluid">
     <a > <img src="https://icons.iconarchive.com/icons/itzikgur/my-seven/256/Travel-BMV-icon.png" alt="" width=""></a>
     <a > <img src="https://i.hizliresim.com/W8MQp7.png" ></a>   
@@ -24,10 +24,51 @@
   </div>
 </div>
 
-
-   
   </div>
 
   </div>
 
-</nav>
+</nav> -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="topnav text-center align-items-center  " id="myTopnav">
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Ana Sayfa</a>
+  <a href="#"><i class="fa fa-fw fa-envelope"></i> İletişim</a>
+  <a href="#"><i class="fa fa-fw fa-youtube"></i> Youtube</a>
+  <a href="#"><i class="fa fa-fw fa-twitter"></i> Twitter</a>
+  <a href="#"><i class="fa fa-fw fa-instagram"></i> İnstagram</a>
+  <a href="#"><i class="fa fa-fw fa-question"></i> Sıkça Sorulan Sorular</a>
+  <a href="#"><i class="fa fa-fw fa-address-book"></i> Hakkımızda</a>
+ 
+<div *ngIf="checkToLogin()==false">
+  <button  class=" btn btn-lg btn-danger btnn " routerLink="/login"  style="margin-right: 5px;" > Giriş yap </button>
+  <button class=" btn btn-lg btn-danger btnn " routerLink="/register" > Kayıt ol </button>
+</div>
+</div>
+<div class="navbar " style="float: right;"> 
+  <div *ngIf="checkToLogin()==true">
+  <div class="dropdown">
+    <div class="btn-group">
+      <button *ngFor="let user of users"  type="button" class="btn btn-dark dropdown-toggle"data-bs-toggle="dropdown" aria-haspopup="true" id="navbarDropdown"  aria-expanded="false">
+       <img src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Places-user-identity-icon.png" alt=""> <strong>{{user.firstName}} </strong> 
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" type="button" routerLink="/user/update">Ayarlar</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" type="button" (click)="logout()">Çıkış Yap</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <img src="https://icons.iconarchive.com/icons/itzikgur/my-seven/256/Travel-BMV-icon.png"  width="220">
+  <img src="https://i.hizliresim.com/9WsDMv.png" >
+</div>
+
+
+
+
+    

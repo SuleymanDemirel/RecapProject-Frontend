@@ -4,27 +4,28 @@
     <div class="card-body">
       <div class="row  ">
     
-        <div class="col-7" >
+        <!-- <div class="col-7" >
           <app-car-filter></app-car-filter>
+        </div> -->
+        <div class="  " style="float: left; ">
+          <label for="filterText" class="form-label"> <strong>Araç ara:</strong> </label>
+          <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Araç ismi giriniz..">
+        </div>
+        <div *ngIf="filterText" class="alert alert-primary" >
+          {{filterText}} aradınız..
         </div>
         
-        <div class="card text-dark bg-white  col-5" *ngFor="let user of users" style="position: relative; right: 120px;">
+        <!-- <div class="card text-dark bg-white  col-5 " *ngFor="let user of users" >
           <div class="card-header bg-white text-center" style="color: rgb(2, 129, 57);"><strong>{{user.firstName}} {{user.lastName}}</strong></div>
           <div class="card-body">
             <h5 class="card-title " style="color: rgb(129, 27, 2);" >Findeks Puanınınz: {{user.findeksPoint}}</h5>
             <h5 class="card-title " style="color: rgb(129, 27, 2);" >Şehir: {{user.companyName}}</h5>
             <h5 class="card-title " style="color: rgb(129, 27, 2);" >Email: {{user.email}}</h5>
           </div>
-        </div>
+        </div> -->
    
         
-        <div class="row   col-8 " style="position: relative; left: 150px;">
-          <label for="filterText" class="form-label"> <strong>Araç ara:</strong> </label>
-          <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Araç ismi giriniz..">
-        </div>
-        <div *ngIf="filterText" class="alert alert-primary">
-          {{filterText}} aradınız..
-        </div>
+      
 
         </div>
      
